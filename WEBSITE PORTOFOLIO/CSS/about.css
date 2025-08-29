@@ -1,0 +1,129 @@
+.about-section {
+  padding: 30px 10%;
+  background: linear-gradient(135deg, #0e1217, #1a2233);
+  color: #e0e0e0;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #00ffc3;
+  text-shadow: 0 0 15px rgba(0, 255, 195, 0.7);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 50%;
+  border: 3px solid #00ffc3;
+  box-shadow: 0 0 25px rgba(0, 255, 195, 0.4);
+  margin: auto;
+  display: block;
+}
+
+.about-box {
+  background:#0d1117;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0, 255, 195, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(0, 255, 195, 0.3);
+}
+
+.about-box h3 {
+  color: #00ffc3;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Styling ul utama */
+.about-box.personal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 15px;
+}
+
+/* Styling setiap list item */
+.about-box.personal ul li {
+  display: flex;            /* bikin ikon, label, value sejajar */
+  align-items: center;      /* ratain vertikal */
+  margin-bottom: 15px;      /* jarak antar baris */
+  color: #ddd;              /* warna teks biar soft */
+}
+
+/* Styling ikon */
+.about-box.personal ul li i {
+  width: 22px;              /* kasih lebar fix biar rata */
+  margin-right: 10px;       /* jarak dengan teks */
+  color: #00e0c6;           /* warna aksen (robot/devops vibe) */
+  font-size: 16px;
+}
+
+/* Styling label */
+.about-box.personal ul li strong {
+  display: inline-block;
+  min-width: 100px;         /* biar semua label rata kiri */
+  font-weight: 600;
+  color: #fff;              /* biar lebih kontras */
+}
+
+/* Styling value */
+.about-box.personal ul li span {
+  color: #ccc;              /* warna teks value lebih soft */
+}
+
+
+.skills {
+  grid-column: span 2; /* Full width */
+  text-align: center;
+}
+
+.about-box.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* bikin isi kotak rata tengah */
+  text-align: center;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 17px;
+  text-align: center;
+}
+
+.skills-grid i,
+.skills-grid .skill-img {
+  font-size: 55px;
+  height: 55px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.skills-grid .skill-img {
+  width: 55px;
+  object-fit: contain;
+}
+
+.skills-grid i:hover,
+.skills-grid .skill-img:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 15px rgba(0, 255, 195, 0.8));
+}

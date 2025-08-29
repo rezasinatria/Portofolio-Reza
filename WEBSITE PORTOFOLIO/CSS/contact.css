@@ -1,0 +1,99 @@
+#contact {
+  background-color: linear-gradient(135deg, #0e1217, #1a2233);
+}
+
+.contact-section {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 0;
+  color: #00ffcc; /* neon warna */
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00c3ff;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;   /* bikin isi ke tengah horizontal */
+  align-items: center;       /* bikin isi ke tengah vertical */
+  padding: 0;
+  gap: 10px;                 /* kasih jarak biar ga dempet */
+}
+
+
+.contact-info {
+  background: rgba(20, 20, 20, 0.8); /* agak gelap transparan */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+  max-width: 500px;
+  margin: 0;
+  text-align: left;
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  color: #00ffe7;
+  margin-bottom: 20px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.contact-info a {
+  color: #00c3ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #00ffe7;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #00ffe7;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  font-size: 1.8rem;
+  margin-right: 20px;
+  color: #00c3ff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00ffe7;
+  transform: scale(1.2);
+}
+
+.contact-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-image img {
+  background: transparent; /* kotaknya hilang */
+  padding: 0;
+  margin: 0;
+  border-radius: 12px; /* biar pas nanti glowing */
+  transition: 0.3s;
+}
+.contact-image img:hover {
+  filter: drop-shadow(0 0 20px #00ffcc);
+  transition: 0.3s;
+}

@@ -1,0 +1,287 @@
+/* === Achievements (DevOps/Robot vibes) === */
+.ach-section {
+  padding: 80px 0;
+  background: radial-gradient(
+      1200px 400px at -10% -10%,
+      rgba(0, 255, 194, 0.07),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 300px at 110% 0%,
+      rgba(0, 157, 255, 0.07),
+      transparent 60%
+    ),
+    #111a23;
+}
+.ach-container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+.ach-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #e9f5ff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.ach-header h2 i {
+  color: #22e6a8;
+  text-shadow: 0 0 12px rgba(34, 230, 168, 0.6);
+}
+.ach-subtitle {
+  color: #97a6b2;
+  margin-top: 6px;
+}
+
+.issuer {
+  font-size: 0.9rem;
+  color: #888;   /* warna abu-abu biar nggak lebih dominan dari judul */
+  margin-top: 4px;
+}
+
+
+
+
+/* Grid */
+.ach-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1000px) {
+  .ach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .ach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.ach-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(9, 16, 24, 0.72);
+  border: 1px solid rgba(60, 255, 216, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(46, 213, 178, 0.06),
+    0 6px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  cursor: zoom-in;
+}
+.ach-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 194, 0.18),
+    rgba(0, 157, 255, 0.18)
+  );
+  opacity: 0.25;
+  filter: blur(16px);
+  z-index: -1;
+}
+.ach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 210, 255, 0.18),
+    0 8px 22px rgba(0, 0, 0, 0.45);
+  border-color: rgba(60, 255, 216, 0.28);
+}
+.ach-thumb {
+  aspect-ratio: 16/10;
+  background: #0c131a;
+  display: grid;
+  place-items: center;
+}
+.ach-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ach-meta {
+  padding: 14px 16px 16px;
+}
+.ach-meta h3 {
+  color: #e6f2ff;
+  font-size: 1.02rem;
+  font-weight: 700;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.inline-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+  filter: brightness(1.2);
+}
+.ach-badge {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #7debd3;
+  background: rgba(28, 196, 156, 0.12);
+  border: 1px solid rgba(46, 213, 178, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Pagination */
+.ach-pagination {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.page-btn {
+  appearance: none;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  background: #e6eef6;
+  color: #0b1926;
+  font-weight: 700;
+  cursor: pointer;
+}
+.page-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.page-numbers {
+  display: flex;
+  gap: 8px;
+}
+.page-numbers button {
+  background: #162331;
+  color: #e1f2ff;
+  border: 1px solid rgba(60, 255, 216, 0.16);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.page-numbers button.active {
+  background: #ffffff;
+  color: #0b1926;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.06);
+}
+
+/* Modal */
+.ach-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  z-index: 1000;
+}
+.ach-modal.is-open {
+  display: grid;
+}
+.ach-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 8, 13, 0.72);
+  backdrop-filter: blur(4px);
+}
+.ach-modal__dialog {
+  position: relative;
+  width: min(1000px, 90%);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(60, 255, 216, 0.18);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 18, 26, 0.95),
+    rgba(10, 18, 26, 0.9)
+  );
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(0, 157, 255, 0.12) inset;
+  animation: pop 0.18s ease-out;
+}
+@keyframes pop {
+  from {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.ach-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #0f1a25;
+  color: #eaf7ff;
+  cursor: pointer;
+}
+.ach-modal__dialog img {
+  display: block;
+  width: 100%;
+  max-height: 80vh;
+  height: auto;
+  background: #0b131b;
+}
+.ach-modal__caption {
+  padding: 10px 14px 14px;
+  color: #bfe9ff;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Fade show helper for cards */
+.ach-card.fade-hide {
+  display: none !important;
+}
+.ach-card.fade-in {
+  animation: fadeIn 0.22s ease both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* [TAMBAHAN] Styling tombol prev & next */
+.ach-modal__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 100;
+}
+.ach-modal__nav:hover {
+  background: rgba(0,0,0,0.8);
+}
+.ach-modal__nav.prev { left: 15px; }
+.ach-modal__nav.next { right: 15px; }
